@@ -1,6 +1,7 @@
 import { CursoService } from './curso.service';
 import { Component, OnInit } from "@angular/core";
 import { Curso } from "./curso";
+import { FormsModule }   from '@angular/forms';
 @Component({
   selector: 'app-curso-list',
   templateUrl: './curso-lista.component.html'
@@ -8,12 +9,25 @@ import { Curso } from "./curso";
 
 export class CursoListComponent implements OnInit {
 
-  cursos: Curso[] = [];
+  _cursos: Curso[] = [];
+  _filterBy: string;
+  filteredCourses: Curso[] = [];
 
   constructor(private cursoService: CursoService) { } //injeçao de dependencia quando carrega curso.service ele percebe e carrega aqui
 
   ngOnInit(): void {
-    this.cursos = this.cursoService.retrieveAll();
+    this._cursos = this.cursoService.retrieveAll();
+    this.filteredCourses = this._cursos;
   }
+
+  set filter(value: string) {
+    this._filterBy = value;
+
+    this.filteredCourses = this._cursos.filter((cursos: Curso) => cursos.name.toLocaleLowerCase().indexOf(this._filterBy.toLocaleLowerCase()) > -1);
+}
+
+get filter() {
+    return this._filterBy;
+}
 
 }

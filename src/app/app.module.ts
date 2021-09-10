@@ -2,7 +2,7 @@ import { StarComponent } from './star/star.component';
 import { CursoListComponent } from './cursos/curso-lista.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,7 +12,8 @@ import { AppComponent } from './app.component';
     StarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
