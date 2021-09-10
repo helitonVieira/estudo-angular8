@@ -18,7 +18,7 @@ export class CursoListComponent implements OnInit {
         price: 9.89,
         code: 'XPS-3595',
         duration: 120,
-        rating: 5.8,
+        rating: 2.4,
         releaseDate: 'November, 4, 2021'
       },
       {
