@@ -1,9 +1,8 @@
 import { CursoService } from './curso.service';
 import { Component, OnInit } from "@angular/core";
 import { Curso } from "./curso";
-import { FormsModule }   from '@angular/forms';
 @Component({
-  selector: 'app-curso-list',
+  //selector: 'app-curso-list',
   templateUrl: './curso-lista.component.html'
 })
 
