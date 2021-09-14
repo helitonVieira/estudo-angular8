@@ -1,3 +1,4 @@
+import { CursoInfoComponent } from './cursos/curso-info.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { NgModule } from '@angular/core';
@@ -20,7 +21,8 @@ import { Error404Component } from './error-404/error-404.component';
     StarComponent,
     ReplacePipe,
     NavBarComponent,
-    Error404Component
+    Error404Component,
+    CursoInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,9 @@ import { Error404Component } from './error-404/error-404.component';
       },
       {
         path:'cursos', component: CursoListComponent // criando a rota cursos apontando para o componente
+      },
+      {
+        path:'cursos/info/:id', component: CursoInfoComponent // criando a rota cursos apontando para o componente
       },
       {
         path:'**', component: Error404Component //rota não existe vai para pagina de erro
