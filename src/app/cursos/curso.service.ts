@@ -13,6 +13,17 @@ export class CursoService {
     return CURSOS;
   }
 
+  retrieveById(id: number): Curso {
+    return CURSOS.find((cursoInterator : Curso) => cursoInterator.id === id);
+}
+
+save(curso: Curso): void {
+    if(curso.id) {
+      const index = CURSOS.findIndex((cursoInterator:Curso)=>cursoInterator.id === curso.id);
+      CURSOS[index]= curso;
+       }
+}
+
   /*
       private cursosUrl: string = 'http://localhost:3100/api/cursos';
 
